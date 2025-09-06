@@ -1,18 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import { DRACOLoader } from "three/addons/loaders/DRACOLoader";
 import CanvasLoader from "../Loader";
 
+// Model Component
 const ComputerModel = ({ isMobile }) => {
-  const { scene } = useGLTF(
-    "./desktop_pc/scene.gltf",
-    undefined,
-    (loader) => {
-      const dracoLoader = new DRACOLoader();
-      loader.setDRACOLoader(dracoLoader);
-    }
-  );
+  const { scene } = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
@@ -28,36 +21,43 @@ const ComputerModel = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.65 : 0.75}
+        position={isMobile ? [0, -2.5, -1.5] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
 };
 
-const MemoizedComputerModel = React.memo(ComputerModel);
-
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    const handleChange = (event) => setIsMobile(event.matches);
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
+  // ✅ Fallback image on mobile
+  if (isMobile) {
+    return (
+      <div className="flex justify-center items-center w-full h-full bg-black">
+        <img
+          src="/fallback-pc.png"
+          alt="Computer"
+          className="max-h-full object-contain"
+        />
+      </div>
+    );
+  }
+
+  // ✅ Render 3D model on larger screens
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
@@ -69,7 +69,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <MemoizedComputerModel isMobile={isMobile} />
+        <ComputerModel isMobile={false} />
       </Suspense>
       <Preload all />
     </Canvas>
