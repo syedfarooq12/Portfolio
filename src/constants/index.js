@@ -2,14 +2,14 @@ import {
   c,
   python,
   java,
-  cpp,
+  canva,
+  figma,
+  abode,
   javascript,
   html,
-  css,
   reactjs,
   tailwind,
   nodejs,
-  git,
   edunet,
   weatherpedia,
   termpw,
@@ -38,133 +38,113 @@ export const navLinks = [
 ];
 
 export const services = [
+  { title: "Figma", icon: figma },
+  { title: "Canva", icon: canva },
+  { title: "abode", icon: abode },
   { title: "C", icon: c },
-  { title: "C++", icon: cpp },
   { title: "Python", icon: python },
   { title: "Java", icon: java },
+ 
+
 ];
 
 export const technologies = [
+   { name: "Figma", icon: figma },
+  { name: "Canva", icon: canva },
+  { name: "Abode", icon: abode },
   { name: "HTML 5", icon: html },
-  { name: "CSS 3", icon: css },
+  {name: "Python", icon: python },
   { name: "JavaScript", icon: javascript },
-  { name: "Rect JS", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
-  { name: "Node JS", icon: nodejs },
-  { name: "Three JS", icon: threejs },
-  { name: "git", icon: git },
+
 ];
 
 export const experiences = [
   {
-    title: "AI/ML Intern",
-    company_name: "EduSkill Foundation | AWS Academy | AICTE",
+    title: "AWS DeveOps Intern",
+    company_name: "APSSDC | AWS Academy | AP Naipunyam",
     icon: eduskill,
     iconBg: "#161329",
-    date: "Sep 2023 - Nov 2023",
+    date: "May 2025 - July  2025",
     points: [
-      "Acquired hands-on knowledge of AWS Cloud Foundation, delving into cloud infrastructure, services, and deployment.",
+      "Built and deployed a Smart Movie Ticket Platform on AWS using a scalable, cloud-based architecture.",
+     "Utilized AWS services such as EC2, S3, IAM, and VPC to create a secure and efficient infrastructure.",
+     "Developed automation scripts and applied DevOps practices like CI/CD pipelines, Git version control, and containerization.",
+     "Improved platform performance and cost-effectiveness through cloud optimization techniques.",
       "also gaining a solid foundation in Machine Learning, covering topics like algorithms, data analysis, and model building.",
     ],
   },
+  
+
   {
-    title: "Mathwork Ai Virtual Intern",
-    company_name: "Mathwork | AICTE",
-    icon: mathwork,
-    iconBg: "#161329",
-    date: "May 2023 - Sep 2023",
-    points: [
-      "Completed virtual internship, gaining a strong foundation in MATLAB, including data analysis and processing.",
-      "Acquired practical skills in image and signal processing, including segmentation, batch processing, and spectral analysis.",
-      "Developed expertise in machine learning models for clustering, classification, and regression, and customized deep learning techniques for image classification.",
-    ],
-  },
-  {
-    title: "Artificial Intelligence Intern",
-    company_name: "Edunet Foundation | IBM SkillsBuild | AICTE",
+    title: "Cyber Security Intern",
+    company_name: "Edunet Foundation | IBM SkillsBuild | APSSDC",
     icon: edunet,
     iconBg: "#161329",
-    date: "June 2023 - July 2023",
+    date: "June 2024 - Aug 2024",
     points: [
-      "Engineered a comprehensive Mental Health Fitness Tracker ML model utilizing Python and scikit-learn.",
-      "Maximized the model's performance by refining model parameters and employing ensemble methods, yielding an outstanding accuracy percentage of 98.50%.",
-      "Leveraged 12 regression algorithms to attain precise outcomes in analyzing and predicting mental fitness levels across 150+ countries.",
+      "Developed and implemented educational programs to improve digital literacy in underserved communities.",
+     "Conducted research on educational trends and technology integration for program planning.",
+     "Maintained reports and dashboards to analyze project outcomes and impact.",
+     "Collaborated with teams to design and deliver workshops and training sessions.",
+     "Assisted in outreach efforts and managed campaigns to increase community engagement.",
+     "Supported administrative tasks including scheduling, communication, and data entry",
     ],
   },
 ];
 
 export const projects = [
   {
-    name: "WeatherPedia",
+    name: "Helpr – Home Services Platform (Flagship Project, Ongoing)",
     description:
-      "Web-based platform that allows users to access weather information for their location by entering it in the search field",
+      "Led the complete design process in Figma, including user research, wireframes, prototypes, and high-fidelity UI. " +
+      "Built and tested responsive pages using HTML/CSS and deployed early versions on Wix. " +
+      "Integrated user-centered design principles to ensure a seamless, mobile-friendly experience.",
     tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "HTML", color: "green-text-gradient" },
-      { name: "bootstrap 5.3.0", color: "pink-text-gradient" },
-      { name: "Weather API by API Ninjas", color: "yellow-text-gradient" },
+      { name: "Figma", color: "blue-text-gradient" },
+      { name: "Softr", color: "green-text-gradient" },
+      { name: "Airtable", color: "pink-text-gradient" },
+      { name: "Home Services", color: "yellow-text-gradient" },
     ],
     image: weatherpedia,
-    source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+    source_code_link: "https://www.helprservices.online",
   },
   {
-    name: "Terminal Like Portfolio Website",
+    name: " Designed Go Vega Webiste",
     description:
-      "A terminal themed portfolio website that allows users to type into the terminal and use commands like a real terminal.",
+      "Designed a modern, responsive, and user-friendly web interface for Govega, focusing on clean aesthetics and seamless navigation.",
     tags: [
-      { name: "HTML", color: "blue-text-gradient" },
-      { name: "css", color: "green-text-gradient" },
-      { name: "Javascript", color: "pink-text-gradient" },
+      { name: "UX/UI", color: "blue-text-gradient" },
+      { name: "Product Designer ", color: "green-text-gradient" },
+      { name: "Web Design", color: "pink-text-gradient" },
     ],
     image: termpw,
-    source_code_link: "https://github.com/lohitkolluri/lohitkolluri.github.io",
+    source_code_link: "https://www.figma.com/proto/3Lgj0HORMTlsbyFMtoxzOG/sf?page-id=205%3A12559&node-id=911-25957&viewport=-21%2C318%2C0.06&t=PW6gx8wQpDxKwCIj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=926%3A42570&show-proto-sidebar=1",
   },
   {
-    name: "Mental Health Fitness Tracker",
+    name: "Shoporia",
     description:
-      "ML model that utilizes regression techniques to provide insights into mental health and make predictions based on the available data.",
-    tags: [
-      { name: "Machine Learning", color: "blue-text-gradient" },
-      { name: "Jupyter Notebook", color: "green-text-gradient" },
-      { name: "Regression Algorithms", color: "pink-text-gradient" },
+        "Designed a modern, conversion-focused landing page for Shoporia, a smart & reliable digital supply chain platform.",
+       tags: [
+      { name: "WebDesign", color: "blue-text-gradient" },
+      { name: "UIUX", color: "green-text-gradient" },
+      { name: "Landing Page", color: "pink-text-gradient" },
     ],
     image: mhft,
     source_code_link:
-      "https://github.com/lohitkolluri/mental_health_fitness_tracker",
-  },
+     "https://www.figma.com/proto/3Lgj0HORMTlsbyFMtoxzOG/sf?page-id=205%3A12559&node-id=913-13333&viewport=-21%2C318%2C0.06&t=PW6gx8wQpDxKwCIj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=926%3A42570 ",
+ },
   {
-    name: "PayloadMaster",
+    name: "Desinged An Mobile App UI/UX",
     description:
-      "Tool to automate payload creation using the Metasploit framework",
+      "Designed a seamless and engaging mobile shopping app for a large retail store",
     tags: [
-      { name: "shell", color: "blue-text-gradient" },
+      { name: "AppDesign", color: "blue-text-gradient" },
+      { name: "MobileUI", color: "blue-text-gradient" },
     ],
     image: payloadmaster,
-    source_code_link: "https://github.com/lohitkolluri/PayloadMaster",
+    source_code_link: "https://www.figma.com/proto/3Lgj0HORMTlsbyFMtoxzOG/sf?page-id=205%3A12559&node-id=911-10631&viewport=-21%2C318%2C0.06&t=PW6gx8wQpDxKwCIj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=926%3A42570",
   },
-  {
-    name: "CompileVortex",
-    description:
-      "Tool to automate payload creation using the Metasploit framework",
-    tags: [
-      { name: "Javascript", color: "blue-text-gradient" },
-      { name: "CSS", color: "green-text-gradient" },
-      { name: "HTML", color: "pink-text-gradient" },
-    ],
-    image: CompileVortex,
-    source_code_link: "https://github.com/lohitkolluri/CompileVortex",
-  },
-  {
-    name: "Sketcher",
-    description:
-      "Convert an input image to a pencil sketch using OpenCV and Matplotlib libraries.",
-    tags: [
-      { name: "OpenCV", color: "blue-text-gradient" },
-      { name: "Matplotlib", color: "green-text-gradient" },
-      { name: "Python", color: "pink-text-gradient" },
-    ],
+ 
 
-    image: sketcher,
-    source_code_link: "https://github.com/lohitkolluri/Image_to_Pencil_Sketch_App",
-  },
 ];

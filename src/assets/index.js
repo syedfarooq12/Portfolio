@@ -6,8 +6,12 @@ import eduskill from "./company/eduskill.png";
 // Import tech stack images
 import python from "./tech-stack/python.png";
 import c from "./tech-stack/c.png";
-import cpp from "./tech-stack/cpp.png";
 import java from "./tech-stack/java.png";
+import canva from "./tech-stack/canva.png";
+import figma from "./tech-stack/figma.png";
+import abode from "./tech-stack/abode.png";
+
+
 
 // Import project images
 import weatherpedia from "./projects/WeatherPedia.png";
@@ -19,7 +23,6 @@ import CompileVortex from "./projects/CompileVortex.png";
 
 // Import tech logos
 import css from "./tech/css.png";
-import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
 import nodejs from "./tech/nodejs.png";
@@ -38,11 +41,12 @@ export {
   edunet,
   python,
   c,
-  cpp,
   java,
+  figma,
+  canva,
+  abode,
   github,
   css,
-  git,
   html,
   javascript,
   nodejs,
