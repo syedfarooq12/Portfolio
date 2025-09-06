@@ -1,14 +1,22 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 // Model Component
-const ComputerModel = ({ isMobile }) => {
+const ComputerModel = ({ isMobile, isUserInteracting }) => {
   const { scene } = useGLTF("./desktop_pc/scene.gltf");
+  const group = useRef();
+
+  // Rotate the model only if not interacting
+  useFrame(() => {
+    if (group.current && !isUserInteracting) {
+      group.current.rotation.y += 0.005;
+    }
+  });
 
   return (
-    <mesh>
+    <group ref={group}>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
@@ -25,12 +33,13 @@ const ComputerModel = ({ isMobile }) => {
         position={isMobile ? [0, -2.5, -1.5] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
-    </mesh>
+    </group>
   );
 };
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 640px)");
@@ -41,7 +50,7 @@ const ComputersCanvas = () => {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // ✅ Fallback image on mobile
+  // Fallback image on mobile
   if (isMobile) {
     return (
       <div className="flex justify-center items-center w-full h-full bg-black">
@@ -54,7 +63,7 @@ const ComputersCanvas = () => {
     );
   }
 
-  // ✅ Render 3D model on larger screens
+  // Render 3D model on larger screens
   return (
     <Canvas
       frameloop="always"
@@ -66,10 +75,13 @@ const ComputersCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
+          enableRotate={true}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          onStart={() => setIsUserInteracting(true)}
+          onEnd={() => setIsUserInteracting(false)}
         />
-        <ComputerModel isMobile={false} />
+        <ComputerModel isMobile={false} isUserInteracting={isUserInteracting} />
       </Suspense>
       <Preload all />
     </Canvas>
