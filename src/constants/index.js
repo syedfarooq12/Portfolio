@@ -49,7 +49,7 @@ export const services = [
 ];
 
 export const technologies = [
-   { name: "Figma", icon: figma },
+  { name: "Figma", icon: figma },
   { name: "Canva", icon: canva },
   { name: "Abode", icon: abode },
   { name: "HTML 5", icon: html },
