@@ -3,10 +3,22 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import Typewriter from "typewriter-effect";
+import herobg from "../assets/herobg.png"; // Adjust path if needed
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto bg-black">
+      {/* Hero Background Image */}
+      <div
+        className="absolute inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: `url(${herobg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 1, // Adjust opacity as needed
+        }}
+      />
+
       {/* Text Section */}
       <div
         className={`absolute inset-0 top-[100px] max-w-7xl mx-auto ${styles.paddingX} flex flex-col sm:flex-row items-start gap-5 z-20`}
@@ -16,7 +28,6 @@ const Hero = () => {
           <div className="w-3 h-3 sm:w-5 sm:h-5 rounded-full bg-[#915EFF]" />
           <div className="w-[2px] sm:w-1 h-32 sm:h-80 violet-gradient" />
         </div>
-
         {/* Hero Text */}
         <div className="mt-4 sm:mt-0">
           <h1 className="text-white font-bold text-[32px] sm:text-[50px] md:text-[70px] leading-tight">
@@ -41,12 +52,12 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
+         
       {/* 3D Canvas or Fallback Image */}
-      <div className="w-full h-[250px] sm:h-[400px] md:h-screen relative z-0">
+      <div className="w-full h-[250px] sm:h-[400px] md:h-screen relative z-10">
         <ComputersCanvas />
-      </div>
-
+      </div> 
+          
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 w-full flex justify-center items-center z-20">
         <a href="#about">
