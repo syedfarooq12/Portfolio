@@ -40,7 +40,7 @@ export const navLinks = [
 export const services = [
   { title: "Figma", icon: figma },
   { title: "Canva", icon: canva },
-  { title: "abode", icon: abode },
+  { title: "Adobe", icon: abode },
   { title: "C", icon: c },
   { title: "Python", icon: python },
   { title: "Java", icon: java },
@@ -115,7 +115,7 @@ export const projects = [
       "Designed a modern, responsive, and user-friendly web interface for Govega, focusing on clean aesthetics and seamless navigation.",
     tags: [
       { name: "UX/UI", color: "blue-text-gradient" },
-      { name: "Product Designer ", color: "green-text-gradient" },
+      { name: "Product Design ", color: "green-text-gradient" },
       { name: "Web Design", color: "pink-text-gradient" },
     ],
     image: termpw,
